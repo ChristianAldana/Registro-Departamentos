@@ -11,8 +11,9 @@ public class RegistrarDepartamentosGuatemala {
 
     public static void main(String[] args) {
                Scanner sc= new Scanner(System.in);
-               DepartamentoArray registroDepartamentos= new DepartamentoArray();//Los registros de los vectores.
-
+         DepartamentoArray registroDepartamentos= new DepartamentoArray();//Los registros de los vectores.
+         DepartamentosListas registroListasDepartamentos = new DepartamentosListas();
+               
         int opcion =0;
           
          do{
@@ -33,19 +34,13 @@ public class RegistrarDepartamentosGuatemala {
                      int opcionA = 0;
                      
                      do{
-                         
-                     String nombreA="";
-                     String cabeceraA="";
-                     int numeroB=0;
-                     
-                         //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
-                     registroDepartamentos.datosDepartamento(nombreA, numeroB, cabeceraA);
-                     
+                                              
                        System.out.println("***Bienvenido usuario seleccione la opcion a realizar: ***");
                        System.out.println("1. Mostrar los departamentos registrados.");
                        System.out.println("2. Buscar departamento por nombre y posicion."); 
                        System.out.println("3. Buscar departamento por la inicial del nombre."); 
                        System.out.println("4. Mostrar los departamentos por posiciones pares");
+                       System.out.println("5. Agregar registros");
                        System.out.println("0. Volver al inicio");
                        
                      System.out.println("Ingrese la opcion que desea usar: ");
@@ -63,7 +58,11 @@ public class RegistrarDepartamentosGuatemala {
                   case 2:
                    //REGISTRO DE ARRAYS
                      
+                      registroDepartamentos.posicionDepartamento();
+                     
 	          break;
+
+
                   
                    case 3:
                    //REGISTRO DE ARRAYS
@@ -74,6 +73,15 @@ public class RegistrarDepartamentosGuatemala {
                      
 	          break;
                   
+                   case 5:
+                    String nombreA="";
+                     String cabeceraA="";
+                     int numeroB=0;
+                     
+                    //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
+                   registroDepartamentos.datosDepartamento(nombreA, numeroB, cabeceraA);
+      
+                   break;
   
                 case 0:
                      
@@ -94,6 +102,7 @@ public class RegistrarDepartamentosGuatemala {
                        System.out.println("1. Mostrar todos los departamentos registrados.");
                        System.out.println("2. Verificar registro de un departamento.");
                        System.out.println("3. Vaciar el registro de la lista.");
+                       System.out.println("4. Agregar registros.");
                        System.out.println("0. Volver al inicio");
                        
                      System.out.println("Ingrese la opcion que desea usar: ");
@@ -104,15 +113,28 @@ public class RegistrarDepartamentosGuatemala {
 
                 case 1:
                     //LLAMAR LISTAS.
-                                  
-                          
-
+                       registroListasDepartamentos.lista();
+                     
 	          break;
                   
                   case 2:
                    //LLAMAR LISTAS
                       
                
+	          break;
+                   case 3:
+                   //LLAMAR LISTAS
+                      
+               
+	          break;
+                   case 4:
+                   //LLAMAR LISTAS
+                     String nombreA="";
+                     String departamentoA="";
+                     int cantidadMunicipios=0;
+                     
+                    registroListasDepartamentos.listaDepartamento(nombreA, departamentoA, cantidadMunicipios);
+
 	          break;
                   
    

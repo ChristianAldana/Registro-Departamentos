@@ -1,10 +1,106 @@
 
 package registrardepartamentosguatemala;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author Cristhian
  */
 public class DepartamentosListas {
+
+     List<DepartamentosListas> listDepartamentos = new ArrayList<DepartamentosListas>();//DECLARACION DEL OBJETO DE LA LISTA.
+     Scanner sc= new Scanner(System.in);
+
+    int[] vector;
+    private double[] matriz;
+    private int indiceVector;
+    String listaA;
+    String verLista;
+    int verLista2;
+        
+     //VARAIBLES DE LOS CONSTRUCTORES.
+     String verNombreA;
+     String verNombreB;
+     String addAlumnosB;
+        int numeroAB;
+        String nombreA;
+        String aleasA;
+        String correoA;
+        int telefonoA;
+        int codigoA;
+        int codigoC;
+        String nombreC;
+        int codigoG;
+        String descripcionA;
+        String departamentoA;
+        int cantidadMunicipios;
     
+    public DepartamentosListas() {
+        
+    }
+
+    public DepartamentosListas(String nombreA,String departamentoA, int cantidadMunicipios) {
+       
+        this.nombreA = nombreA;
+        this.departamentoA = departamentoA;
+        this.cantidadMunicipios = cantidadMunicipios;
+        
+    }
+
+    public String getNombreA() {
+        return nombreA;
+    }
+
+    public void setNombreC(String nombreA) {
+        this.nombreA = nombreA;
+    }
+    
+    public String getDepartamentoA() {
+        return departamentoA;
+    }
+
+    public void setdepartamentoA(String DepartamentoA) {
+        this.departamentoA = departamentoA;
+    }
+
+    public int getcantidadMunicipios() {
+        return cantidadMunicipios;
+    }
+
+    public void setcantidadMunicipios(int cantidadMunicipios) {
+        this.cantidadMunicipios = cantidadMunicipios;
+    }
+
+    
+    public void listaDepartamento(String nombreA, String departamentoA, int cantidadMunicipios){
+        
+                        System.out.println("***Ingrese el nombre del departamento: ***");
+                         nombreA= sc.next();
+                         
+                        System.out.println("***Ingrese la cabecera: ***");
+                         departamentoA = sc.next();
+                
+                        System.out.println("***Ingrese cuantos municipios tiene el departamento: ***");
+                         cantidadMunicipios = sc.nextInt();
+           
+        listDepartamentos.add(new DepartamentosListas (nombreA,departamentoA,cantidadMunicipios));
+       
+    }
+    
+    public void lista(){
+
+        //AQUI SE MUESTRA TODA LA LISTA DE LAS TABLAS DE LAS LISTAS.
+        System.out.println("***Lista Alumnos***");
+        System.out.println("");
+        
+        for (int i=0; i<listDepartamentos.size(); i++) {
+            System.out.println("El Nombre del Departamento: " + listDepartamentos.get(i).getNombreA());
+            System.out.println("La Cabecera es: " +  listDepartamentos.get(i).getDepartamentoA());
+            System.out.println("La cantidad de municipios es: " + listDepartamentos.get(i).getcantidadMunicipios());
+        }
+    }
+           
 }

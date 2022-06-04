@@ -1,6 +1,10 @@
 
 package registrardepartamentosguatemala;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -24,7 +28,8 @@ public class DepartamentoArray {
      int codigoA, numeroB;
      int codigoC, CodigoG;
      String cabeceraA;
-    
+
+     
      //VARIABLES DE LOS VECTORES.
      String[] vectorDatos;
      private int indiceVector;
@@ -107,6 +112,34 @@ public class DepartamentoArray {
         this.indiceVector=this.indiceVector+1;
     }
  
-       }      
+       
+       public void posicionDepartamento() throws IOException {
+
+		
+	
+	}
+      
+}
+
+
+    
+                           
+
+
+
+
+       
+
+
+
+
+       
+
+
+       
+
+       
+       
+             
 
 
