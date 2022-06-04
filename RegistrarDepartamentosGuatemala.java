@@ -13,12 +13,13 @@ public class RegistrarDepartamentosGuatemala {
                Scanner sc= new Scanner(System.in);
          DepartamentoArray registroDepartamentos= new DepartamentoArray();//Los registros de los vectores.
          DepartamentosListas registroListasDepartamentos = new DepartamentosListas();
-               
+ 
+         
         int opcion =0;
           
          do{
              
-              System.out.println("***Bienvenido al programa de registro de AlumnosBA***");
+              System.out.println("***Bienvenido al programa de registro de departamentos***");
               System.out.println("Seleccione la opcion de registro que desee utilizar: ");
               System.out.println("1. Registro de datos con arrays"); 
               System.out.println("2. Registro de datos con listas"); 
@@ -55,15 +56,11 @@ public class RegistrarDepartamentosGuatemala {
                      
 	          break;
                   
-                  case 2:
+                case 2:
                    //REGISTRO DE ARRAYS
-                     
-                      registroDepartamentos.posicionDepartamento();
-                     
+
 	          break;
 
-
-                  
                    case 3:
                    //REGISTRO DE ARRAYS
                      
@@ -77,9 +74,10 @@ public class RegistrarDepartamentosGuatemala {
                     String nombreA="";
                      String cabeceraA="";
                      int numeroB=0;
+                     int numeroOrden=0;
                      
                     //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
-                   registroDepartamentos.datosDepartamento(nombreA, numeroB, cabeceraA);
+                   registroDepartamentos.datosDepartamento(numeroOrden,nombreA, numeroB, cabeceraA);
       
                    break;
   
@@ -120,22 +118,23 @@ public class RegistrarDepartamentosGuatemala {
                   case 2:
                    //LLAMAR LISTAS
                       
-               
 	          break;
+
                    case 3:
-                   //LLAMAR LISTAS
-                      
-               
+                   //LLAMAR LISTAS VACIAS
+                       registroListasDepartamentos.eliminarListas();
 	          break;
+                   
                    case 4:
                    //LLAMAR LISTAS
                      String nombreA="";
                      String departamentoA="";
                      int cantidadMunicipios=0;
+                     int numeroOrden=0;
                      
-                    registroListasDepartamentos.listaDepartamento(nombreA, departamentoA, cantidadMunicipios);
-
-	          break;
+                    registroListasDepartamentos.listaDepartamento(numeroOrden, nombreA, departamentoA, cantidadMunicipios);
+	          
+                    break;
                   
    
                 case 0:
@@ -170,5 +169,6 @@ public class RegistrarDepartamentosGuatemala {
     
          System.out.println("El programa a finalizado");
     }
-    
 }
+    
+

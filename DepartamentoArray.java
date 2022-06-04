@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,7 +29,7 @@ public class DepartamentoArray {
      int codigoA, numeroB;
      int codigoC, CodigoG;
      String cabeceraA;
-
+     int numeroOrden;
      
      //VARIABLES DE LOS VECTORES.
      String[] vectorDatos;
@@ -47,19 +48,24 @@ public class DepartamentoArray {
         this.numeroB=0;
         this.codigoC=0;
         this.CodigoG=0;
+        this.numeroOrden=0;
         this.cabeceraA="";
          vectorDatos = new String [100];
          this.indiceVector= 0;  
          
          //SE INICIALIZA EL VECTOR.
+         this.registrarDatos4(i, i, i, i, numeroOrden);
          this.registrarDatos2(i, i, i, i, nombreA);
          this.registrarDatos(i, i, i, i, numeroB);
          this.registrarDatos5(i, i, i, i, cabeceraA);
 
      }
      
-    public void datosDepartamento (String nombreA, int numeroB, String cabeceraA){
-         
+    public void datosDepartamento (int numeroOrden,String nombreA, int numeroB, String cabeceraA){
+                        
+                         System.out.println("***Ingrese numero posicion: ***");
+                          numeroOrden=sc.nextInt();
+                          
                         System.out.println("***Ingrese el nombre del departamento: ***");
                           nombreA=sc.next();
                           
@@ -70,6 +76,7 @@ public class DepartamentoArray {
                          cabeceraA = sc.next();
                          
               //REGRISTRAR LOS DATOS DE LOS DATOS INGRESADOS EN LOS VECTORES EN ORDEN.           
+             this.registrarDatos4("Datos: ","","Numero de posicion: ","",numeroOrden);            
             this.registrarDatos2("Datos: ","","Nombre del Departamento: ","",nombreA);
             this.registrarDatos("Datos: ","","Cantidad Municipios: ","",numeroB);
             this.registrarDatos5("Datos: ","","Cabecera: ","",cabeceraA);
@@ -88,6 +95,13 @@ public class DepartamentoArray {
       vectorDatos[indiceVector]= tipo+espacio1+""+tipo1+espacio2+""+primerParametro;
    
     }
+    public void registrarDatos4(String tipo, String espacio1,String tipo1, String espacio2, int primerParametro){
+       indiceVector=indiceVector+1;;
+       
+      vectorDatos[indiceVector]= tipo+espacio1+""+tipo1+espacio2+""+primerParametro;
+   
+    }
+   
    public void registrarDatos5(String tipo, String espacio1,String tipo1, String espacio2, String primerParametro){
        indiceVector=indiceVector+1;;
        
@@ -111,15 +125,22 @@ public class DepartamentoArray {
         this.vector[indiceVector]=numero;
         this.indiceVector=this.indiceVector+1;
     }
- 
+   
        
-       public void posicionDepartamento() throws IOException {
-
-		
-	
-	}
-      
+       static void posicionDatos(int[]almacenarDatos){
+           
+  
+   }
+            
 }
+      
+
+
+
+
+
+
+    
 
 
     

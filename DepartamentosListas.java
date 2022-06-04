@@ -17,37 +17,26 @@ public class DepartamentosListas {
     int[] vector;
     private double[] matriz;
     private int indiceVector;
-    String listaA;
-    String verLista;
+    String listaA,verLista;
     int verLista2;
         
      //VARAIBLES DE LOS CONSTRUCTORES.
-     String verNombreA;
-     String verNombreB;
-     String addAlumnosB;
-        int numeroAB;
-        String nombreA;
-        String aleasA;
-        String correoA;
-        int telefonoA;
-        int codigoA;
-        int codigoC;
-        String nombreC;
-        int codigoG;
-        String descripcionA;
-        String departamentoA;
-        int cantidadMunicipios;
+     String verNombreA,verNombreB,addAlumnosB,numeroAB;
+     String nombreA,aleasA,correoA;
+     int numeroOrden,codigoA,codigoC,codigoG,cantidadMunicipios;
+     String nombreC,descripcionA,departamentoA;
     
     public DepartamentosListas() {
         
     }
 
-    public DepartamentosListas(String nombreA,String departamentoA, int cantidadMunicipios) {
+    public DepartamentosListas(int numeroOrden,String nombreA,String departamentoA, int cantidadMunicipios) {
        
+        this.numeroOrden = numeroOrden;
         this.nombreA = nombreA;
         this.departamentoA = departamentoA;
         this.cantidadMunicipios = cantidadMunicipios;
-        
+       
     }
 
     public String getNombreA() {
@@ -74,9 +63,20 @@ public class DepartamentosListas {
         this.cantidadMunicipios = cantidadMunicipios;
     }
 
+   public int getnumeroOrden() {
+        return numeroOrden;
+    }
+
+    public void setnumeroOrden(int numeroOrden) {
+        this.numeroOrden = numeroOrden;
+    }
     
-    public void listaDepartamento(String nombreA, String departamentoA, int cantidadMunicipios){
-        
+    
+    public void listaDepartamento(int numeroOrden,String nombreA, String departamentoA, int cantidadMunicipios){
+                        
+                        System.out.println("***Ingrese numero posicion: ***");
+                          numeroOrden=sc.nextInt();
+                          
                         System.out.println("***Ingrese el nombre del departamento: ***");
                          nombreA= sc.next();
                          
@@ -86,8 +86,7 @@ public class DepartamentosListas {
                         System.out.println("***Ingrese cuantos municipios tiene el departamento: ***");
                          cantidadMunicipios = sc.nextInt();
            
-        listDepartamentos.add(new DepartamentosListas (nombreA,departamentoA,cantidadMunicipios));
-       
+        listDepartamentos.add(new DepartamentosListas(numeroOrden,nombreA,departamentoA, cantidadMunicipios));
     }
     
     public void lista(){
@@ -97,10 +96,15 @@ public class DepartamentosListas {
         System.out.println("");
         
         for (int i=0; i<listDepartamentos.size(); i++) {
+            System.out.println("El numero de posicion es: " + listDepartamentos.get(i).getnumeroOrden());    
             System.out.println("El Nombre del Departamento: " + listDepartamentos.get(i).getNombreA());
             System.out.println("La Cabecera es: " +  listDepartamentos.get(i).getDepartamentoA());
             System.out.println("La cantidad de municipios es: " + listDepartamentos.get(i).getcantidadMunicipios());
         }
     }
-           
-}
+     public void eliminarListas(){
+         listDepartamentos.clear();
+     }
+ }
+  
+
