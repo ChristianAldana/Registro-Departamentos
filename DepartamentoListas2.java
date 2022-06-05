@@ -9,6 +9,6 @@ package registrardepartamentosguatemala;
  */
 public class DepartamentoListas2 {
     
-      
-}
+     }
+
 

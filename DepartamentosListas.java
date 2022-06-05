@@ -105,6 +105,23 @@ public class DepartamentosListas {
      public void eliminarListas(){
          listDepartamentos.clear();
      }
+     
+     public void verificarDepartamento (){
+		
+          Scanner teclado = new Scanner (System.in);
+          String valor = "";
+          int indice;
+          
+          System.out.println("Verificar registro de un departamento.");
+          valor = teclado.next();
+          indice = listDepartamentos.indexOf(valor);
+          if (indice != 0){
+                      System.out.println("Este registro si esta registrado");
+          }else {
+              System.out.println("Este registro del departamento no se encuentra");
+
+          }    
+     
  }
-  
+}
 

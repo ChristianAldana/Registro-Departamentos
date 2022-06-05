@@ -117,7 +117,7 @@ public class RegistrarDepartamentosGuatemala {
                   
                   case 2:
                    //LLAMAR LISTAS
-                      
+                      registroListasDepartamentos.verificarDepartamento();
 	          break;
 
                    case 3:
