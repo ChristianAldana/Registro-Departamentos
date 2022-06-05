@@ -39,40 +39,9 @@ public class DepartamentosListas {
        
     }
 
-    public String getNombreA() {
-        return nombreA;
-    }
-
-    public void setNombreC(String nombreA) {
-        this.nombreA = nombreA;
-    }
-    
-    public String getDepartamentoA() {
-        return departamentoA;
-    }
-
-    public void setdepartamentoA(String DepartamentoA) {
-        this.departamentoA = departamentoA;
-    }
-
-    public int getcantidadMunicipios() {
-        return cantidadMunicipios;
-    }
-
-    public void setcantidadMunicipios(int cantidadMunicipios) {
-        this.cantidadMunicipios = cantidadMunicipios;
-    }
-
-   public int getnumeroOrden() {
-        return numeroOrden;
-    }
-
-    public void setnumeroOrden(int numeroOrden) {
-        this.numeroOrden = numeroOrden;
-    }
     
     
-    public void listaDepartamento(int numeroOrden,String nombreA, String departamentoA, int cantidadMunicipios){
+    public void listaDepartamento(){
                         
                         System.out.println("***Ingrese numero posicion: ***");
                           numeroOrden=sc.nextInt();
@@ -123,5 +92,40 @@ public class DepartamentosListas {
           }    
      
  }
+     
+     public String getNombreA() {
+        return nombreA;
+    }
+
+    public void setNombreC(String nombreA) {
+        this.nombreA = nombreA;
+    }
+    
+    public String getDepartamentoA() {
+        return departamentoA;
+    }
+
+    public void setdepartamentoA(String DepartamentoA) {
+        this.departamentoA = departamentoA;
+    }
+
+    public int getcantidadMunicipios() {
+        return cantidadMunicipios;
+    }
+
+    public void setcantidadMunicipios(int cantidadMunicipios) {
+        this.cantidadMunicipios = cantidadMunicipios;
+    }
+
+   public int getnumeroOrden() {
+        return numeroOrden;
+    }
+
+    public void setnumeroOrden(int numeroOrden) {
+        this.numeroOrden = numeroOrden;
+    }
+    
+     
+     
 }
 

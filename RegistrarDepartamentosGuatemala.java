@@ -58,12 +58,14 @@ public class RegistrarDepartamentosGuatemala {
                   
                 case 2:
                    //REGISTRO DE ARRAYS
+                  
+                  registroDepartamentos.mostrarDatosDepartamento();
 
 	          break;
 
                    case 3:
                    //REGISTRO DE ARRAYS
-                     
+                   
 	          break;
                    case 4:
                    //REGISTRO DE ARRAYS
@@ -71,13 +73,9 @@ public class RegistrarDepartamentosGuatemala {
 	          break;
                   
                    case 5:
-                    String nombreA="";
-                     String cabeceraA="";
-                     int numeroB=0;
-                     int numeroOrden=0;
-                     
+                    
                     //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
-                   registroDepartamentos.datosDepartamento(numeroOrden,nombreA, numeroB, cabeceraA);
+                   registroDepartamentos.datosDepartamento();
       
                    break;
   
@@ -127,12 +125,9 @@ public class RegistrarDepartamentosGuatemala {
                    
                    case 4:
                    //LLAMAR LISTAS
-                     String nombreA="";
-                     String departamentoA="";
-                     int cantidadMunicipios=0;
-                     int numeroOrden=0;
                      
-                    registroListasDepartamentos.listaDepartamento(numeroOrden, nombreA, departamentoA, cantidadMunicipios);
+                     
+                    registroListasDepartamentos.listaDepartamento();
 	          
                     break;
                   
@@ -145,24 +140,7 @@ public class RegistrarDepartamentosGuatemala {
              }while(opcionAB!=0);
    
              break;
-                     
-                 
-                case 3:
-                  //NOS MUESTRA EL REGISTRO DE DATOS DE LOS ARRAYS
 
-                 break;
-                 
-                case 4:
-                    //NOS MUESTRA EL REGISTRO DE DATOS EN LISTAS.
-                         
-                     
-                 break;
-                
-                 
-                case 0:
-                              
-                 break;
-                 
               }
          
          }while(opcion!=0);        
@@ -170,5 +148,3 @@ public class RegistrarDepartamentosGuatemala {
          System.out.println("El programa a finalizado");
     }
 }
-    
-

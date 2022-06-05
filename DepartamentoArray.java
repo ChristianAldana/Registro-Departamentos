@@ -16,20 +16,13 @@ public class DepartamentoArray {
     
     //Variables de los primeros vectores.
      String nombreCA = "";
-     float codigoG;
-     float codigoAA;
-     float numeroBA;
+     float codigoG,codigoAA,numeroBAcodigoCA;
      String nombreB = "";
      String nombreA = "";
-     float codigoCA;
      String descripcionAA ="";
      int datosAlumnosB, datoCursoB;
-     String datosAlumnosBA;
-     String datoCursoBA;
-     int codigoA, numeroB;
-     int codigoC, CodigoG;
+     int codigoA, numeroB,codigoC,CodigoG,numeroOrden;
      String cabeceraA;
-     int numeroOrden;
      
      //VARIABLES DE LOS VECTORES.
      String[] vectorDatos;
@@ -61,7 +54,7 @@ public class DepartamentoArray {
 
      }
      
-    public void datosDepartamento (int numeroOrden,String nombreA, int numeroB, String cabeceraA){
+    public void datosDepartamento (){
                         
                          System.out.println("***Ingrese numero posicion: ***");
                           numeroOrden=sc.nextInt();
@@ -126,9 +119,12 @@ public class DepartamentoArray {
         this.indiceVector=this.indiceVector+1;
     }
    
-       
-       static void posicionDatos(int[]almacenarDatos){
-           
+ 
+     public void mostrarDatosDepartamento(){
+       System.out.println("Ingresar el departamento a buscar");
+        nombreA=sc.next();
+        
+        System.out.println("El departento "+ nombreA +" esta ubicado en:"+numeroOrden);
   
    }
             
