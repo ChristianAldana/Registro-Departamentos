@@ -127,9 +127,45 @@ public class DepartamentoArray {
         System.out.println("El departento "+ nombreA +" esta ubicado en:"+numeroOrden);
   
    }
-            
+   
+     
+     
+     public void mostrarDatosDepartament(){
+     System.out.println("Ingresar el departamento a buscar");
+         String nombreDep =sc.next();
+       this.nombreA=nombreDep;
+       System.out.println("El departento "+ nombreDep +" esta ubicado en:" + indiceVector);
+   }
+   
+   public void inicialNombre () {
+                
+      Scanner inicial= new Scanner(System.in);
+
+      System.out.println("Ingresar letra del departamento");
+             String inicialNombre = inicial.next();
+             
+         String registroDatos2 = "";
+                
+                
+		String busqueda = registroDatos2;
+		int indice = nombreA.indexOf(busqueda);
+		if (indice != -1) {
+
+                    System.out.println("La búsqueda con la letra "+inicialNombre+ "se encuentran los departamentos de:" +nombreA );
+		} else {
+			System.out.println("El elemento no existe");
+		}
+	}
+
+   
+   
+   
+   public void posicionPar () {
+       
+   }
 }
-      
+
+	
 
 
 

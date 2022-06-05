@@ -65,11 +65,13 @@ public class RegistrarDepartamentosGuatemala {
 
                    case 3:
                    //REGISTRO DE ARRAYS
-                   
+                registroDepartamentos.inicialNombre();
+  
+                       
 	          break;
                    case 4:
                    //REGISTRO DE ARRAYS
-                     
+
 	          break;
                   
                    case 5:
