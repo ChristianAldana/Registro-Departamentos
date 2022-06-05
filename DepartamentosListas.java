@@ -1,3 +1,4 @@
+//CHRISTIAN ALDANA 0909-21-697
 
 package registrardepartamentosguatemala;
 
@@ -40,7 +41,7 @@ public class DepartamentosListas {
     }
 
     
-    
+    //METODO EN EL CUAL PIDO LOS DATOS PARA REGISTRAR.
     public void listaDepartamento(){
                         
                         System.out.println("***Ingrese numero posicion: ***");
@@ -54,7 +55,7 @@ public class DepartamentosListas {
                 
                         System.out.println("***Ingrese cuantos municipios tiene el departamento: ***");
                          cantidadMunicipios = sc.nextInt();
-           
+           //GUARDO LOS DATOS EN UNA LISTA.
         listDepartamentos.add(new DepartamentosListas(numeroOrden,nombreA,departamentoA, cantidadMunicipios));
     }
     
@@ -70,20 +71,20 @@ public class DepartamentosListas {
             System.out.println("La Cabecera es: " +  listDepartamentos.get(i).getDepartamentoA());
             System.out.println("La cantidad de municipios es: " + listDepartamentos.get(i).getcantidadMunicipios());
         }
-    }
+    }   //ELIMINO LOS DATOS DE LAS LISTAS.
      public void eliminarListas(){
          listDepartamentos.clear();
      }
      
      public void verificarDepartamento (){
-		
+		//METODO PARA VERIFICAR SI EXISTE EL DPTO.
           Scanner teclado = new Scanner (System.in);
           String valor = "";
           int indice;
           
           System.out.println("Verificar registro de un departamento.");
           valor = teclado.next();
-          indice = listDepartamentos.indexOf(valor);
+          indice = listDepartamentos.indexOf(valor); //FUNCION INDEXOF PARA BUSCAR ENTRE LISTAS.
           if (indice != 0){
                       System.out.println("Este registro si esta registrado");
           }else {

@@ -1,15 +1,12 @@
+//CHRISTIAN ALDANA 0909-21-697
 
 package registrardepartamentosguatemala;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- *
  * @author Cristhian
  */
 public class DepartamentoArray {
@@ -46,16 +43,17 @@ public class DepartamentoArray {
          vectorDatos = new String [100];
          this.indiceVector= 0;  
          
-         //SE INICIALIZA EL VECTOR.
+         //SE INICIALIZA EL VECTOR, ORDEN A SEGUIR PARA LOS DATOS DE LOS ARRAYS.
          this.registrarDatos4(i, i, i, i, numeroOrden);
          this.registrarDatos2(i, i, i, i, nombreA);
          this.registrarDatos(i, i, i, i, numeroB);
          this.registrarDatos5(i, i, i, i, cabeceraA);
 
      }
-     
+    
+     //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
     public void datosDepartamento (){
-                        
+                        // PIDE LOS DATOS DE LOS DEPARTAMENTOS.
                          System.out.println("***Ingrese numero posicion: ***");
                           numeroOrden=sc.nextInt();
                           
@@ -101,7 +99,7 @@ public class DepartamentoArray {
       vectorDatos[indiceVector]= tipo+espacio1+""+tipo1+espacio2+""+primerParametro;
    
     }
-   public void mostrarDatos(){
+   public void mostrarDatos(){ //MUESTRA LOS DATOS DE LOS REGISTROS DE LOS DEPART.
           try{   
               System.out.println(vectorDatos.length);
             for (int i=1; i<vectorDatos.length;i++){
@@ -113,31 +111,23 @@ public class DepartamentoArray {
             System.out.println(e.getMessage());       
         }
      }
-
+            // SE ALMACENA LOS DATOS.
        public void almacenarDatos(String numero){
         this.vector[indiceVector]=numero;
         this.indiceVector=this.indiceVector+1;
     }
    
- 
+        //MOSTRAR DEPARTAMENTO POR NOMBRE Y POSICION.
      public void mostrarDatosDepartamento(){
        System.out.println("Ingresar el departamento a buscar");
         nombreA=sc.next();
         
-        System.out.println("El departento "+ nombreA +" esta ubicado en:"+numeroOrden);
+        System.out.println("El departamento "+ nombreA +" esta ubicado en:"+numeroOrden);
   
    }
-   
      
-     
-     public void mostrarDatosDepartament(){
-     System.out.println("Ingresar el departamento a buscar");
-         String nombreDep =sc.next();
-       this.nombreA=nombreDep;
-       System.out.println("El departento "+ nombreDep +" esta ubicado en:" + indiceVector);
-   }
-   
-   public void inicialNombre () {
+    //MOSTRAR DEPARTAMENTO POR LA INICIAL DE UN DPTO.
+     public void inicialNombre () {
                 
       Scanner inicial= new Scanner(System.in);
 
@@ -159,11 +149,26 @@ public class DepartamentoArray {
 
    
    
-   
+   //MOSTRAR LOS DEPARTAMENTOS POR PARES.
    public void posicionPar () {
-       
+     int num;
+
+    int numeroPar = 0;
+
+    for(int i=1; i<=numeroB; i++) //NUMERO B SERA LO QUE EL USUARIO 
+    {                             //INGRESE AL INICIO 
+        if(numeroB%2==0) //NUMEROS PARES
+        {
+            numeroPar= numeroB++; //ESTA COMPARANDO Y BUSCANDO SI HAY
+        }                       //DIGITOS QUE COINCIDAN
+    }
+    System.out.println("Los numeros pares son: ");
+    System.out.println(numeroPar);
    }
-}
+   
+   }
+
+//CHRISTIAN ALDANA 0909-21-697
 
 	
 

@@ -1,4 +1,4 @@
-
+//CHRISTIAN ALDANA 0909-21-697
 package registrardepartamentosguatemala;
 
 import java.util.Scanner;
@@ -10,11 +10,13 @@ import java.util.Scanner;
 public class RegistrarDepartamentosGuatemala {
 
     public static void main(String[] args) {
-               Scanner sc= new Scanner(System.in);
+         
+        //DECLARACION DE LOS OBJETOS
+        Scanner sc= new Scanner(System.in);
          DepartamentoArray registroDepartamentos= new DepartamentoArray();//Los registros de los vectores.
          DepartamentosListas registroListasDepartamentos = new DepartamentosListas();
  
-         
+         //OPCION PARA LOS SWITCH
         int opcion =0;
           
          do{
@@ -35,7 +37,7 @@ public class RegistrarDepartamentosGuatemala {
                      int opcionA = 0;
                      
                      do{
-                                              
+                             //TRABAJAR CON ARRAYS                 
                        System.out.println("***Bienvenido usuario seleccione la opcion a realizar: ***");
                        System.out.println("1. Mostrar los departamentos registrados.");
                        System.out.println("2. Buscar departamento por nombre y posicion."); 
@@ -57,21 +59,21 @@ public class RegistrarDepartamentosGuatemala {
 	          break;
                   
                 case 2:
-                   //REGISTRO DE ARRAYS
+                   //REGISTRO DE ARRAYS, MOSTRAR DEPARTAMENTO POR NOMBRE Y POSICION.
                   
                   registroDepartamentos.mostrarDatosDepartamento();
 
 	          break;
 
                    case 3:
-                   //REGISTRO DE ARRAYS
+                   //REGISTRO DE ARRAYS, MOSTRAR DEPARTAMENTO POR LA INICIAL DE UN DPTO.
                 registroDepartamentos.inicialNombre();
   
                        
 	          break;
                    case 4:
-                   //REGISTRO DE ARRAYS
-
+                   //REGISTRO DE ARRAYS, MOSTRAR LOS DEPARTAMENTOS POR PARES.
+                registroDepartamentos.posicionPar();
 	          break;
                   
                    case 5:
@@ -110,13 +112,13 @@ public class RegistrarDepartamentosGuatemala {
               switch(opcionAB){
 
                 case 1:
-                    //LLAMAR LISTAS.
+                    //LLAMAR LISTAS -U MOSTRAR LISTAS.
                        registroListasDepartamentos.lista();
                      
 	          break;
                   
                   case 2:
-                   //LLAMAR LISTAS
+                   //LLAMAR LISTAS, VERIFICAR UN REGISTRO DE UN DEPARTAMENTO.
                       registroListasDepartamentos.verificarDepartamento();
 	          break;
 
@@ -150,3 +152,4 @@ public class RegistrarDepartamentosGuatemala {
          System.out.println("El programa a finalizado");
     }
 }
+//CHRISTIAN ALDANA 0909-21-697
