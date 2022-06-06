@@ -22,11 +22,13 @@ public class DepartamentoArray {
      String cabeceraA;
      
      //VARIABLES DE LOS VECTORES.
+     String [] registroDatos;
      String[] vectorDatos;
      private int indiceVector;
      String[] vector;
+     int [] municipiosDatos;
      private String[] registrarDatos;
-     String i="";
+     int i= 0;
      
       Scanner sc= new Scanner(System.in);
      
@@ -40,23 +42,19 @@ public class DepartamentoArray {
         this.CodigoG=0;
         this.numeroOrden=0;
         this.cabeceraA="";
+        municipiosDatos = new int[100];
+        registroDatos = new String[6];
          vectorDatos = new String [100];
          this.indiceVector= 0;  
          
          //SE INICIALIZA EL VECTOR, ORDEN A SEGUIR PARA LOS DATOS DE LOS ARRAYS.
-         this.registrarDatos4(i, i, i, i, numeroOrden);
-         this.registrarDatos2(i, i, i, i, nombreA);
-         this.registrarDatos(i, i, i, i, numeroB);
-         this.registrarDatos5(i, i, i, i, cabeceraA);
-
+         
      }
     
      //PIDO LOS REGISTROS DE LOS DEPARTAMENTOS A LOS USUARIOS.
     public void datosDepartamento (){
                         // PIDE LOS DATOS DE LOS DEPARTAMENTOS.
-                         System.out.println("***Ingrese numero posicion: ***");
-                          numeroOrden=sc.nextInt();
-                          
+                       
                         System.out.println("***Ingrese el nombre del departamento: ***");
                           nombreA=sc.next();
                           
@@ -67,11 +65,12 @@ public class DepartamentoArray {
                          cabeceraA = sc.next();
                          
               //REGRISTRAR LOS DATOS DE LOS DATOS INGRESADOS EN LOS VECTORES EN ORDEN.           
-             this.registrarDatos4("Datos: ","","Numero de posicion: ","",numeroOrden);            
             this.registrarDatos2("Datos: ","","Nombre del Departamento: ","",nombreA);
             this.registrarDatos("Datos: ","","Cantidad Municipios: ","",numeroB);
             this.registrarDatos5("Datos: ","","Cabecera: ","",cabeceraA);
-
+            registroDatos[i]= nombreA;     
+            municipiosDatos [i]= numeroB;
+            
      }
     public void registrarDatos(String tipo, String espacio1,String tipo1, String espacio2, int primerParametro){
        indiceVector=indiceVector+1;;
@@ -119,12 +118,22 @@ public class DepartamentoArray {
    
         //MOSTRAR DEPARTAMENTO POR NOMBRE Y POSICION.
      public void mostrarDatosDepartamento(){
+         
+         int llamarPosicion = -1;
        System.out.println("Ingresar el departamento a buscar");
-        nombreA=sc.next();
+        String buscar = sc.nextLine();
         
-        System.out.println("El departamento "+ nombreA +" esta ubicado en:"+numeroOrden);
-  
+        for (int i=0;i<registroDatos.length; i++){
+            if (registroDatos[i] == null ? (buscar) == null : registroDatos[i].equals(buscar)){
+                llamarPosicion =i;
+            }
+        }
+       if  (llamarPosicion==-1){ System.out.println("Lamentamos informar que este departamento no esta registrado");
+     } else{ System.out.println("Este departamento esta registrado en la posicion:" +llamarPosicion);}
    }
+     
+     
+     
      
     //MOSTRAR DEPARTAMENTO POR LA INICIAL DE UN DPTO.
      public void inicialNombre () {
@@ -134,41 +143,32 @@ public class DepartamentoArray {
       System.out.println("Ingresar letra del departamento");
              String inicialNombre = inicial.next();
              
-         String registroDatos2 = "";
-                
-                
-		String busqueda = registroDatos2;
-		int indice = nombreA.indexOf(busqueda);
-		if (indice != -1) {
-
-                    System.out.println("La búsqueda con la letra "+inicialNombre+ "se encuentran los departamentos de:" +nombreA );
-		} else {
-			System.out.println("El elemento no existe");
-		}
+          for (int i=0;i<registroDatos.length; i++){
+         if (registroDatos[i] == null ? (inicialNombre) == null : registroDatos[i].contains(inicialNombre)){     
+                 
+     System.out.println("El departamento que se encontro con esa inicial es"+registroDatos[i]);
+     } else{ System.out.println("No se encontro un departamento");}
+   }
 	}
 
    
    
    //MOSTRAR LOS DEPARTAMENTOS POR PARES.
    public void posicionPar () {
-     int num;
-
-    int numeroPar = 0;
-
-    for(int i=1; i<=numeroB; i++) //NUMERO B SERA LO QUE EL USUARIO 
-    {                             //INGRESE AL INICIO 
-        if(numeroB%2==0) //NUMEROS PARES
-        {
-            numeroPar= numeroB++; //ESTA COMPARANDO Y BUSCANDO SI HAY
-        }                       //DIGITOS QUE COINCIDAN
-    }
-    System.out.println("Los numeros pares son: ");
-    System.out.println(numeroPar);
-   }
    
+       for (int i=0; i<10; i++)
+       {
+           if (i%2==0)//PAR
+               if(municipiosDatos[i]>4){
+                   System.out.println(municipiosDatos[i]);
+               }
+       }
+       
    }
 
-//CHRISTIAN ALDANA 0909-21-697
+ }
+
+//CHRISTIAN ALDANA 0909-21-697.
 
 	
 

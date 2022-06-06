@@ -14,8 +14,8 @@ public class RegistrarDepartamentosGuatemala {
         //DECLARACION DE LOS OBJETOS
         Scanner sc= new Scanner(System.in);
          DepartamentoArray registroDepartamentos= new DepartamentoArray();//Los registros de los vectores.
-         DepartamentosListas registroListasDepartamentos = new DepartamentosListas();
- 
+         departamentosListas registroListasDepartamentos = new departamentosListas();
+         
          //OPCION PARA LOS SWITCH
         int opcion =0;
           

@@ -10,9 +10,11 @@ import java.util.Scanner;
  *
  * @author Cristhian
  */
-public class DepartamentosListas {
+public class departamentosListas {
 
-     List<DepartamentosListas> listDepartamentos = new ArrayList<DepartamentosListas>();//DECLARACION DEL OBJETO DE LA LISTA.
+     List<departamentosListas> listDepartamentos = new ArrayList<departamentosListas>();//DECLARACION DEL OBJETO DE LA LISTA.
+     List<String> verificarListas = new ArrayList<String>();//DECLARACION DEL OBJETO DE LA LISTA.
+
      Scanner sc= new Scanner(System.in);
 
     int[] vector;
@@ -27,13 +29,12 @@ public class DepartamentosListas {
      int numeroOrden,codigoA,codigoC,codigoG,cantidadMunicipios;
      String nombreC,descripcionA,departamentoA;
     
-    public DepartamentosListas() {
+    public departamentosListas() {
         
     }
 
-    public DepartamentosListas(int numeroOrden,String nombreA,String departamentoA, int cantidadMunicipios) {
+    public departamentosListas(String nombreA,String departamentoA, int cantidadMunicipios) {
        
-        this.numeroOrden = numeroOrden;
         this.nombreA = nombreA;
         this.departamentoA = departamentoA;
         this.cantidadMunicipios = cantidadMunicipios;
@@ -43,10 +44,7 @@ public class DepartamentosListas {
     
     //METODO EN EL CUAL PIDO LOS DATOS PARA REGISTRAR.
     public void listaDepartamento(){
-                        
-                        System.out.println("***Ingrese numero posicion: ***");
-                          numeroOrden=sc.nextInt();
-                          
+  
                         System.out.println("***Ingrese el nombre del departamento: ***");
                          nombreA= sc.next();
                          
@@ -56,7 +54,8 @@ public class DepartamentosListas {
                         System.out.println("***Ingrese cuantos municipios tiene el departamento: ***");
                          cantidadMunicipios = sc.nextInt();
            //GUARDO LOS DATOS EN UNA LISTA.
-        listDepartamentos.add(new DepartamentosListas(numeroOrden,nombreA,departamentoA, cantidadMunicipios));
+            listDepartamentos.add(new departamentosListas(nombreA,departamentoA,cantidadMunicipios));
+            verificarListas.add(new String (nombreA));
     }
     
     public void lista(){
@@ -66,11 +65,11 @@ public class DepartamentosListas {
         System.out.println("");
         
         for (int i=0; i<listDepartamentos.size(); i++) {
-            System.out.println("El numero de posicion es: " + listDepartamentos.get(i).getnumeroOrden());    
             System.out.println("El Nombre del Departamento: " + listDepartamentos.get(i).getNombreA());
             System.out.println("La Cabecera es: " +  listDepartamentos.get(i).getDepartamentoA());
             System.out.println("La cantidad de municipios es: " + listDepartamentos.get(i).getcantidadMunicipios());
         }
+        
     }   //ELIMINO LOS DATOS DE LAS LISTAS.
      public void eliminarListas(){
          listDepartamentos.clear();
@@ -78,21 +77,21 @@ public class DepartamentosListas {
      
      public void verificarDepartamento (){
 		//METODO PARA VERIFICAR SI EXISTE EL DPTO.
-          Scanner teclado = new Scanner (System.in);
-          String valor = "";
-          int indice;
+                
+                
+          System.out.println("Ingrese el departamento que desee verificar.");
+         String verificarNumero = sc.nextLine();
           
-          System.out.println("Verificar registro de un departamento.");
-          valor = teclado.next();
-          indice = listDepartamentos.indexOf(valor); //FUNCION INDEXOF PARA BUSCAR ENTRE LISTAS.
-          if (indice != 0){
-                      System.out.println("Este registro si esta registrado");
-          }else {
-              System.out.println("Este registro del departamento no se encuentra");
-
-          }    
+         boolean registro = verificarListas.contains(verificarNumero); //VERIFICAR LISTA 
+         if (verificarNumero.equals(registro)){
+     } else 
+ 
+     if (registro == true){
+            System.out.println("El departamento si esta registrado");
+} else
+    System.out.println("El departamento no esta registrado");
+}
      
- }
      
      public String getNombreA() {
         return nombreA;
